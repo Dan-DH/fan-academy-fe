@@ -12,7 +12,8 @@ const config: Config = {
       gridTemplateColumns: { '13': 'repeat(13, minmax(0, 1fr))' },
       colors: {
         'fa-yellow': '#ebdd00',
-        'fa-orange': '#e58700'
+        'fa-orange': '#e58700',
+        'fa-blue': '#205c98'
       }
     },
     keyframes: { shimmer: { '100%': { transform: 'translateX(100%)' } } }
