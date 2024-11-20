@@ -10,6 +10,10 @@ const nextConfig = {
       {
         source: '/games/:path*',
         destination: 'http://localhost:3003/games/:path*'
+      },
+      {
+        source: '/auth/:path*',
+        destination: 'http://localhost:3003/auth/:path*'
       }
     ];
   }
