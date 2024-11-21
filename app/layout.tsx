@@ -1,7 +1,7 @@
 'use client';
 
 import './ui/global.css';
-import NavBar from './ui/nav-bar';
+import NavBar from './ui/navBar';
 
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
