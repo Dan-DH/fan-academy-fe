@@ -22,19 +22,13 @@ export default function NavBar() {
               {/* Mobile menu */}
               <button type="button"  onClick={toggleSiteMenu} className="relative inline-flex items-center justify-center rounded-md p-2 text-black" aria-controls="mobile-menu" aria-expanded="false">
                 {/* Icon when menu is closed. */}
-                {
-                  !siteMenuOpen &&
-                  <svg className="block size-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                  </svg>
-                }
+                <svg className={`${!siteMenuOpen ? "block" : "hidden"} size-6`} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
                 {/* Icon when menu is open. */}
-                {
-                  siteMenuOpen &&
-                  <svg className="block size-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                  </svg>
-                }
+                <svg className={`${siteMenuOpen ? "block" : "hidden"} size-6`} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
               </button>
             </div>
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -58,43 +52,29 @@ export default function NavBar() {
                   </button>
                 </div>
 
-                {/*
-                Dropdown menu, show/hide based on menu state.
-
-                Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-                Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-                */}
-                {profileMenuOpen &&
-                  <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex={-1}>
-                    {/* Active: "bg-gray-100 outline-none", Not Active: "" */}
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-0">Profile</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-1">Settings</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-2">Sign out</a>
-                  </div>
-                }
+                {/*Dropdown menu, show/hide based on menu state. */ }
+                <div className={`${profileMenuOpen ? "absolute" : "hidden"} right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none`} role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex={-1}>
+                  {/* Active: "bg-gray-100 outline-none", Not Active: "" */}
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-0">Profile</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-1">Settings</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-2">Sign out</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Mobile menu, show/hide based on menu state. */}
-        {
-          siteMenuOpen &&
-          <div className="relative">
-            <div className="sm:hidden absolute left-0 top-0 z-10 w-full bg-white" id="mobile-menu">
-              <div className="space-y-1 px-2 pb-3 pt-2">
-                {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                <a href="/" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
-                <a href="#" className="block rounded-md  px-3 py-2 text-base font-medium text-black hover:bg-blue-400">Games</a>
-                <a href="/about" className="block rounded-md  px-3 py-2 text-base font-medium text-black hover:bg-blue-400">About</a>
-              </div>
+        <div className="relative">
+          <div className={`${siteMenuOpen ? "absolute" : "hidden"} sm:hidden left-0 top-0 z-10 w-full bg-white`} id="mobile-menu">
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+              <a href="/" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
+              <a href="#" className="block rounded-md  px-3 py-2 text-base font-medium text-black hover:bg-blue-400">Games</a>
+              <a href="/about" className="block rounded-md  px-3 py-2 text-base font-medium text-black hover:bg-blue-400">About</a>
             </div>
           </div>
-        }
+        </div>
       </nav>
 
     </div>
