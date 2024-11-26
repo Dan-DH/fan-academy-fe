@@ -23,13 +23,15 @@ export default function SignInForm() {
         })
       });
 
+      console.log('this logs');
       await response.json();
+      console.log('this also logs');
 
       if (response.ok) {
         // add redirect here to main page
         setUsername('');
         setPassword('');
-        router.push('/about'); // FIXME: possible null
+        router.push('/home');
         // console.log('Login success');
         // console.log(data);
       } else {

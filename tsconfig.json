@@ -12,6 +12,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "noImplicitAny": false, // TODO: remove this line if Phaser types found
     "incremental": true,
     "plugins": [
       {
@@ -30,6 +31,6 @@
     ".next/types/**/*.ts",
     "app/lib/placeholder-data.ts",
     "scripts/seed.js"
-  ],
+,   ],
   "exclude": ["node_modules"]
 }

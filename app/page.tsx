@@ -11,7 +11,7 @@ export default function LandingPage() {
     const authCheck = async() => {
       const check = await checkAuthStatus();
       if (check) {
-        router.push('/about');
+        router.push('/home');
       } else {
         router.push('/users/sign-in');
       }
